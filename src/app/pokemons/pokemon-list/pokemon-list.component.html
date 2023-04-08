@@ -1,0 +1,13 @@
+
+<mat-form-field class="example-full-width" appearance="fill">
+  <input matInput placeholder="Name..." value="" [(ngModel)]= "search">
+</mat-form-field>
+<button matSuffix mat-button (click)="searchPokemon()"><mat-icon >search</mat-icon></button>
+<mat-nav-list class="pokedex-list" infiniteScroll [scrollWindow]="false" [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
+    <mat-list-item routerLink="/pokedex/{{pokemon.id}}" *ngFor="let pokemon of pokemons">
+      <img matListItemAvatar src="assets\img\sprites\{{ pokemon.id }}.png" alt="pokemon_sprite_{{ pokemon.id }}">
+      <p matLine>
+          <span> {{pokemon.id}}. {{pokemon.name}} </span>
+      </p>
+    </mat-list-item>
+</mat-nav-list>

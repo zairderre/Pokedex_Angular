@@ -1,0 +1,8 @@
+
+
+
+  <mat-list-item routerLink="/pokedex/{{pokemon.id}}" *ngFor="let pokemon of pokemons"> 
+        <img matListAvatar src="assets\img\sprites\{{ pokemon.id }}.png" alt="pokemon_sprite_{{ pokemon.id }}">
+        <p matLine> <span> {{pokemon.id}}. {{pokemon.name}} </span> </p>
+    </mat-list-item>
+
